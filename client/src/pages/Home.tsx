@@ -286,7 +286,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white dark:bg-gray-900 mesh-gradient relative overflow-hidden">
+      <section id="about" className="py-20 bg-[hsl(47,25%,95%)] dark:bg-gray-900 mesh-gradient relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -389,7 +389,7 @@ export default function Home() {
       <Portfolio />
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-white dark:bg-gray-900">
+      <section id="experience" className="py-20 bg-[hsl(47,25%,95%)] dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
