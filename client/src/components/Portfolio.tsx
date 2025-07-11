@@ -121,9 +121,9 @@ export function Portfolio() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">My Portfolio</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-display">My Portfolio</h2>
           <div className="w-24 h-1 portfolio-bg-primary mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-inter">
             Here are some of my recent projects that showcase my skills and expertise in full-stack development.
           </p>
         </motion.div>
@@ -145,7 +145,7 @@ export function Portfolio() {
                 activeFilter === filter.id
                   ? 'portfolio-bg-primary text-white'
                   : 'portfolio-dark-card text-gray-600 dark:text-gray-300'
-              } rounded-full transition-all duration-200`}
+              } rounded-full transition-all duration-200 font-inter`}
             >
               {filter.label}
             </Button>
@@ -180,8 +180,8 @@ export function Portfolio() {
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                    <h3 className="text-xl font-semibold mb-2 font-display">{project.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 font-inter">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">

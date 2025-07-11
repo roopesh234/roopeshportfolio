@@ -53,7 +53,7 @@ export function Navigation() {
           >
             <button
               onClick={() => scrollToSection('#home')}
-              className="text-2xl font-bold portfolio-primary hover:opacity-80 transition-opacity"
+              className="text-2xl font-bold portfolio-primary hover:opacity-80 transition-opacity font-display"
             >
               AJ
             </button>
@@ -66,7 +66,7 @@ export function Navigation() {
                 <motion.button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-200"
+                  className="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-200 font-inter"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -105,7 +105,7 @@ export function Navigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden bg-white dark:bg-gray-900 shadow-lg"
+            className="md:hidden bg-[hsl(47,25%,95%)] dark:bg-gray-900 shadow-lg"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -116,7 +116,7 @@ export function Navigation() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                  className="block w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors font-inter"
                 >
                   {item.label}
                 </button>

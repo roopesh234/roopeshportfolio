@@ -190,7 +190,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-6"
+              className="text-5xl md:text-7xl font-bold mb-6 font-display"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -199,16 +199,16 @@ export default function Home() {
               <span className="portfolio-primary neon-glow">Alex Johnson</span>
             </motion.h1>
             
-            <div className="text-2xl md:text-4xl font-medium mb-8 h-16 flex items-center justify-center">
+            <div className="text-2xl md:text-4xl font-medium mb-8 h-16 flex items-center justify-center font-inter">
               <TypingAnimation 
                 text="Full Stack Developer" 
-                className="text-gray-600 dark:text-gray-300"
+                className="text-gray-600 dark:text-gray-300 font-mono"
                 speed={150}
               />
             </div>
             
             <motion.p 
-              className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12"
+              className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 font-inter"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -228,7 +228,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05, rotateX: 5, rotateY: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="px-8 py-4 text-white rounded-xl btn-holographic border-0 text-lg font-semibold">
+                <Button className="px-8 py-4 text-white rounded-xl btn-holographic border-0 text-lg font-semibold font-inter">
                   <Download className="w-5 h-5 mr-2" />
                   Download Resume
                 </Button>
@@ -240,7 +240,7 @@ export default function Home() {
                 <Button 
                   variant="outline"
                   onClick={() => scrollToSection('#portfolio')}
-                  className="px-8 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-xl holographic-card text-lg font-semibold backdrop-blur-sm"
+                  className="px-8 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-xl holographic-card text-lg font-semibold backdrop-blur-sm font-inter"
                 >
                   <Eye className="w-5 h-5 mr-2" />
                   View Portfolio
@@ -257,19 +257,19 @@ export default function Home() {
             >
               <div className="text-center">
                 <AnimatedCounter target={50} />
-                <div className="text-gray-600 dark:text-gray-400">Projects</div>
+                <div className="text-gray-600 dark:text-gray-400 font-inter">Projects</div>
               </div>
               <div className="text-center">
                 <AnimatedCounter target={5} />
-                <div className="text-gray-600 dark:text-gray-400">Years Experience</div>
+                <div className="text-gray-600 dark:text-gray-400 font-inter">Years Experience</div>
               </div>
               <div className="text-center">
                 <AnimatedCounter target={30} />
-                <div className="text-gray-600 dark:text-gray-400">Happy Clients</div>
+                <div className="text-gray-600 dark:text-gray-400 font-inter">Happy Clients</div>
               </div>
               <div className="text-center">
                 <AnimatedCounter target={100} suffix="%" />
-                <div className="text-gray-600 dark:text-gray-400">Success Rate</div>
+                <div className="text-gray-600 dark:text-gray-400 font-inter">Success Rate</div>
               </div>
             </motion.div>
           </motion.div>
@@ -295,9 +295,9 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-display">About Me</h2>
             <div className="w-24 h-1 portfolio-bg-primary mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-inter">
               I'm a passionate full-stack developer with expertise in modern web technologies and a love for creating innovative solutions.
             </p>
           </motion.div>
@@ -398,9 +398,9 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Experience</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-display">Experience</h2>
             <div className="w-24 h-1 portfolio-bg-primary mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-inter">
               My professional journey and the amazing companies I've had the pleasure to work with.
             </p>
           </motion.div>
@@ -424,10 +424,10 @@ export default function Home() {
                   <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:pl-8'}`}>
                     <Card className="portfolio-light-gray shadow-lg">
                       <CardContent className="p-6">
-                        <h3 className="text-xl font-semibold portfolio-primary mb-2">{exp.title}</h3>
-                        <h4 className="text-lg font-medium mb-2">{exp.company}</h4>
-                        <p className="text-gray-600 dark:text-gray-300 mb-3">{exp.period}</p>
-                        <p className="text-gray-600 dark:text-gray-300 mb-4">
+                        <h3 className="text-xl font-semibold portfolio-primary mb-2 font-display">{exp.title}</h3>
+                        <h4 className="text-lg font-medium mb-2 font-inter">{exp.company}</h4>
+                        <p className="text-gray-600 dark:text-gray-300 mb-3 font-mono">{exp.period}</p>
+                        <p className="text-gray-600 dark:text-gray-300 mb-4 font-inter">
                           {exp.description}
                         </p>
                         <div className="flex flex-wrap gap-2">
@@ -445,7 +445,7 @@ export default function Home() {
                   </div>
                   
                   {/* Timeline dot */}
-                  <div className="relative flex-shrink-0 w-4 h-4 portfolio-bg-primary rounded-full border-4 border-white dark:border-gray-900 shadow-lg hidden md:block"></div>
+                  <div className="relative flex-shrink-0 w-4 h-4 portfolio-bg-primary rounded-full border-4 border-[hsl(47,25%,95%)] dark:border-gray-900 shadow-lg hidden md:block"></div>
                   
                   <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:pl-8' : 'md:pr-8'}`}>
                     {/* Empty space for alternating layout */}
@@ -467,9 +467,9 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-display">Get In Touch</h2>
             <div className="w-24 h-1 portfolio-bg-primary mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-inter">
               Ready to start your next project? Let's discuss how I can help bring your ideas to life.
             </p>
           </motion.div>
@@ -484,8 +484,8 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <div>
-                <h3 className="text-2xl font-semibold mb-6">Let's Start a Conversation</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-8">
+                <h3 className="text-2xl font-semibold mb-6 font-display">Let's Start a Conversation</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-8 font-inter">
                   I'm always interested in new opportunities and exciting projects. 
                   Whether you need a complete web application, API development, or technical consultation, 
                   I'd love to hear about your project.
@@ -499,8 +499,8 @@ export default function Home() {
                     <Mail className="text-primary text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Email</h4>
-                    <p className="text-gray-600 dark:text-gray-300">alex.johnson@example.com</p>
+                    <h4 className="font-semibold text-lg font-inter">Email</h4>
+                    <p className="text-gray-600 dark:text-gray-300 font-mono">alex.johnson@example.com</p>
                   </div>
                 </div>
                 
@@ -509,8 +509,8 @@ export default function Home() {
                     <Phone className="text-primary text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Phone</h4>
-                    <p className="text-gray-600 dark:text-gray-300">+1 (555) 123-4567</p>
+                    <h4 className="font-semibold text-lg font-inter">Phone</h4>
+                    <p className="text-gray-600 dark:text-gray-300 font-mono">+1 (555) 123-4567</p>
                   </div>
                 </div>
                 
@@ -519,8 +519,8 @@ export default function Home() {
                     <MapPin className="text-primary text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Location</h4>
-                    <p className="text-gray-600 dark:text-gray-300">San Francisco, CA</p>
+                    <h4 className="font-semibold text-lg font-inter">Location</h4>
+                    <p className="text-gray-600 dark:text-gray-300 font-inter">San Francisco, CA</p>
                   </div>
                 </div>
                 
@@ -529,15 +529,15 @@ export default function Home() {
                     <Clock className="text-primary text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Response Time</h4>
-                    <p className="text-gray-600 dark:text-gray-300">Within 24 hours</p>
+                    <h4 className="font-semibold text-lg font-inter">Response Time</h4>
+                    <p className="text-gray-600 dark:text-gray-300 font-inter">Within 24 hours</p>
                   </div>
                 </div>
               </div>
               
               {/* Social Links */}
               <div>
-                <h4 className="font-semibold text-lg mb-4">Follow Me</h4>
+                <h4 className="font-semibold text-lg mb-4 font-inter">Follow Me</h4>
                 <div className="flex space-x-4">
                   {[
                     { icon: Github, href: '#' },
