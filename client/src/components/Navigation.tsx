@@ -55,7 +55,7 @@ export function Navigation() {
               onClick={() => scrollToSection('#home')}
               className="text-2xl font-bold portfolio-primary hover:opacity-80 transition-opacity font-display"
             >
-              AJ
+              Roopesh
             </button>
           </motion.div>
 

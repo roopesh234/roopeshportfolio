@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Eye, ChevronDown, Github, Linkedin, Twitter, Instagram, Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Download, Eye, ChevronDown, Github, Linkedin, Mail, Phone, MapPin, Clock, } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -22,45 +22,31 @@ import { Portfolio } from '@/components/Portfolio';
 const skills = [
   { name: 'React.js', percentage: 95 },
   { name: 'Node.js', percentage: 90 },
-  { name: 'TypeScript', percentage: 88 },
+  { name: 'JavaScript', percentage: 88 },
   { name: 'Python', percentage: 85 },
   { name: 'AWS/Cloud', percentage: 82 },
   { name: 'MongoDB', percentage: 80 }
 ];
 
 const technologies = [
-  'React', 'Node.js', 'TypeScript', 'Next.js', 'Express', 
-  'MongoDB', 'PostgreSQL', 'AWS', 'Docker', 'GraphQL'
+  'React', 'Node.js', 'JavaScript', 'Express', 
+  'MongoDB', 'SQL', 'AWS/Azure', 'Jenkins'
 ];
 
 const experiences = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'TechCorp Solutions',
-    period: '2022 - Present',
-    description: 'Leading a team of 5 developers in building scalable web applications using React, Node.js, and AWS. Implemented CI/CD pipelines and reduced deployment time by 60%.',
-    technologies: ['React', 'Node.js', 'AWS', 'Team Leadership']
-  },
-  {
-    title: 'Full Stack Developer',
-    company: 'StartupXYZ',
-    period: '2020 - 2022',
-    description: 'Developed and maintained multiple web applications for fintech clients. Built RESTful APIs, implemented real-time features, and optimized database performance.',
-    technologies: ['Vue.js', 'Express.js', 'PostgreSQL', 'Socket.io']
-  },
-  {
     title: 'Frontend Developer',
-    company: 'Digital Agency Pro',
-    period: '2019 - 2020',
+    company: 'HCLTech, Benguluru',
+    period: '2023 - present',
     description: 'Created responsive websites and web applications for various clients. Focused on user experience, performance optimization, and modern JavaScript frameworks.',
     technologies: ['JavaScript', 'React', 'SASS', 'Webpack']
   },
   {
     title: 'Junior Web Developer',
-    company: 'WebSolutions Inc',
-    period: '2018 - 2019',
+    company: 'HCLTech, Noida',
+    period: '2022 - 2023',
     description: 'Started my professional journey building static websites and learning modern web development practices. Gained experience in HTML, CSS, JavaScript, and basic backend development.',
-    technologies: ['HTML/CSS', 'JavaScript', 'PHP', 'MySQL']
+    technologies: ['HTML/CSS', 'JavaScript', 'MySQL']
   }
 ];
 
@@ -195,8 +181,8 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-gray-800 dark:text-white">Hi, I'm </span>
-              <span className="portfolio-primary neon-glow">Alex Johnson</span>
+              <span className="text-gray-800 dark:text-white">Hey, I'm </span>
+              <span className="portfolio-primary neon-glow">Roopesh S</span>
             </motion.h1>
             
             <div className="text-2xl md:text-4xl font-medium mb-8 h-16 flex items-center justify-center font-inter">
@@ -256,15 +242,15 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.9 }}
             >
               <div className="text-center">
-                <AnimatedCounter target={50} />
+                <AnimatedCounter target={23} />
                 <div className="text-gray-600 dark:text-gray-400 font-inter">Projects</div>
               </div>
               <div className="text-center">
-                <AnimatedCounter target={5} />
+                <AnimatedCounter target={3} />
                 <div className="text-gray-600 dark:text-gray-400 font-inter">Years Experience</div>
               </div>
               <div className="text-center">
-                <AnimatedCounter target={30} />
+                <AnimatedCounter target={16} />
                 <div className="text-gray-600 dark:text-gray-400 font-inter">Happy Clients</div>
               </div>
               <div className="text-center">
@@ -313,10 +299,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                With over 5 years of experience in web development, I've had the privilege of working with 
-                startups and established companies to bring their digital visions to life. My expertise spans 
-                across front-end frameworks like React and Vue.js, back-end technologies including Node.js 
-                and Python, and cloud platforms like AWS and Azure.
+                With over 3+ years of hands-on experience across the software lifecycle - from building responsive React UIs to developing scalable Flask APIs, managing MongoDB databases. I’ve contributed to production systems across frontend and backend, writing clean, testable code that improved usability, performance, and stakeholder satisfaction. I thrive on thoughtful questions, patient debugging, and teams where learning and impact matter as much as the code.
               </p>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 I believe in writing clean, maintainable code and following best practices. When I'm not coding, 
@@ -328,19 +311,19 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4 pt-6">
                 <div>
                   <span className="font-semibold portfolio-primary">Location:</span>
-                  <span className="text-gray-600 dark:text-gray-300"> San Francisco, CA</span>
+                  <span className="text-gray-600 dark:text-gray-300">Benguluru, India</span>
                 </div>
                 <div>
                   <span className="font-semibold portfolio-primary">Email:</span>
-                  <span className="text-gray-600 dark:text-gray-300"> alex@example.com</span>
+                  <span className="text-gray-600 dark:text-gray-300">sroopesh242@gmail.com</span>
                 </div>
                 <div>
                   <span className="font-semibold portfolio-primary">Education:</span>
-                  <span className="text-gray-600 dark:text-gray-300"> BS Computer Science</span>
+                  <span className="text-gray-600 dark:text-gray-300">Electronics and Communication Engineering</span>
                 </div>
                 <div>
                   <span className="font-semibold portfolio-primary">Languages:</span>
-                  <span className="text-gray-600 dark:text-gray-300"> English, Spanish</span>
+                  <span className="text-gray-600 dark:text-gray-300"> English, Telugu, Tamil</span>
                 </div>
               </div>
             </motion.div>
@@ -500,7 +483,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg font-inter">Email</h4>
-                    <p className="text-gray-600 dark:text-gray-300 font-mono">alex.johnson@example.com</p>
+                    <p className="text-gray-600 dark:text-gray-300 font-mono">sroopesh242@gmail.com</p>
                   </div>
                 </div>
                 
@@ -510,7 +493,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg font-inter">Phone</h4>
-                    <p className="text-gray-600 dark:text-gray-300 font-mono">+1 (555) 123-4567</p>
+                    <p className="text-gray-600 dark:text-gray-300 font-mono">+91 833092 0063</p>
                   </div>
                 </div>
                 
@@ -520,7 +503,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg font-inter">Location</h4>
-                    <p className="text-gray-600 dark:text-gray-300 font-inter">San Francisco, CA</p>
+                    <p className="text-gray-600 dark:text-gray-300 font-inter">Benguluru, India</p>
                   </div>
                 </div>
                 
@@ -540,10 +523,8 @@ export default function Home() {
                 <h4 className="font-semibold text-lg mb-4 font-inter">Follow Me</h4>
                 <div className="flex space-x-4">
                   {[
-                    { icon: Github, href: '#' },
-                    { icon: Linkedin, href: '#' },
-                    { icon: Twitter, href: '#' },
-                    { icon: Instagram, href: '#' }
+                    { icon: Github, href: 'https://github.com/roopesh234' },
+                    { icon: Linkedin, href: 'https://www.linkedin.com/in/roopesh234/' },
                   ].map((social, index) => (
                     <motion.a
                       key={index}
@@ -575,7 +556,7 @@ export default function Home() {
                         <Input
                           id="firstName"
                           {...form.register('firstName')}
-                          placeholder="John"
+                          placeholder="Roopesh"
                           className="mt-2"
                         />
                         {form.formState.errors.firstName && (
@@ -589,7 +570,7 @@ export default function Home() {
                         <Input
                           id="lastName"
                           {...form.register('lastName')}
-                          placeholder="Doe"
+                          placeholder="Shan"
                           className="mt-2"
                         />
                         {form.formState.errors.lastName && (
@@ -606,7 +587,7 @@ export default function Home() {
                         id="email"
                         type="email"
                         {...form.register('email')}
-                        placeholder="john.doe@example.com"
+                        placeholder="roopesh.shan@example.com"
                         className="mt-2"
                       />
                       {form.formState.errors.email && (
@@ -680,17 +661,15 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Footer Brand */}
             <div>
-              <h3 className="text-2xl font-bold portfolio-primary mb-4">Alex Johnson</h3>
+              <h3 className="text-2xl font-bold portfolio-primary mb-4">Roopesh S</h3>
               <p className="text-gray-300 mb-4">
                 Full Stack Developer passionate about creating exceptional digital experiences 
                 with modern technologies and best practices.
               </p>
               <div className="flex space-x-4">
                 {[
-                  { icon: Github, href: '#' },
-                  { icon: Linkedin, href: '#' },
-                  { icon: Twitter, href: '#' },
-                  { icon: Instagram, href: '#' }
+                  { icon: Github, href: 'https://github.com/roopesh234' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/in/roopesh234/' },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
@@ -727,15 +706,15 @@ export default function Home() {
               <div className="space-y-2">
                 <p className="text-gray-300 flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
-                  alex.johnson@example.com
+                  sroopesh242@gmail.com
                 </p>
                 <p className="text-gray-300 flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
-                  +1 (555) 123-4567
+                  +91 83309 20063
                 </p>
                 <p className="text-gray-300 flex items-center">
                   <MapPin className="w-4 h-4 mr-2" />
-                  San Francisco, CA
+                  Benguluru, India
                 </p>
               </div>
             </div>
@@ -743,7 +722,7 @@ export default function Home() {
           
           <div className="border-t border-gray-700 mt-8 pt-8 text-center">
             <p className="text-gray-300">
-              &copy; 2024 Alex Johnson. All rights reserved. Built with ❤️ using React, Node.js, and Material UI.
+              &copy; 2024 Roopesh S. All rights reserved. Built with ❤️ using React, Node.js, and Material UI.
             </p>
           </div>
         </div>
