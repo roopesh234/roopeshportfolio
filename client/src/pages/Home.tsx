@@ -225,7 +225,17 @@ export default function Home() {
                 whileHover={{ scale: 1.05, rotateX: 5, rotateY: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="px-8 py-4 text-white rounded-xl btn-holographic border-0 text-lg font-semibold font-inter">
+                <Button 
+                  className="px-8 py-4 text-white rounded-xl btn-holographic border-0 text-lg font-semibold font-inter"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/Roopesh CV.pdf';
+                    link.download = 'Roopesh_CV.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                >
                   <Download className="w-5 h-5 mr-2" />
                   Download Resume
                 </Button>
