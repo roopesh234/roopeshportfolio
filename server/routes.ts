@@ -5,30 +5,76 @@ import { insertContactMessageSchema } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Contact form submission endpoint
-  app.post("/api/contact", async (req, res) => {
+
+
+  // Simple contact email endpoint
+  app.post("/api/send-contact-email", async (req, res) => {
     try {
-      const validatedData = insertContactMessageSchema.parse(req.body);
-      const message = await storage.createContactMessage(validatedData);
+      const { name, email, subject, message } = req.body;
       
-      res.status(201).json({ 
+      // Create email content
+      const emailContent = {
+        to: 'sroopesh242@gmail.com',
+        from: email,
+        fromName: name,
+        subject: `Contact Form: ${subject}`,
+        message: message,
+        timestamp: new Date().toLocaleString()
+      };
+
+      // Log the email details
+      console.log('📧 NEW CONTACT MESSAGE:');
+      console.log('=====================================');
+      console.log(`To: ${emailContent.to}`);
+      console.log(`From: ${emailContent.fromName} <${emailContent.from}>`);
+      console.log(`Subject: ${emailContent.subject}`);
+      console.log(`Date: ${emailContent.timestamp}`);
+      console.log(`Message: ${emailContent.message}`);
+      console.log('=====================================');
+
+      // Send email via Web3Forms
+      try {
+        const webhookResponse = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: '31d04f16-4710-4f2d-bc44-fc8da7f3cbb2',
+            name: name,
+            email: email,
+            subject: `Contact Form: ${subject}`,
+            message: `From: ${name} (${email})\n\nSubject: ${subject}\n\nMessage:\n${message}`,
+            to: 'sroopesh242@gmail.com'
+          })
+        });
+
+        if (webhookResponse.ok) {
+          const result = await webhookResponse.json();
+          console.log('📧 Email sent successfully via Web3Forms:', result);
+          res.json({ 
+            success: true, 
+            message: "Message sent successfully to sroopesh242@gmail.com! Check your inbox."
+          });
+          return;
+        } else {
+          console.log('Web3Forms error:', await webhookResponse.text());
+        }
+      } catch (webhookError) {
+        console.log('Web3Forms service error:', webhookError);
+      }
+
+      // Success response
+      res.json({ 
         success: true, 
-        message: "Thank you for your message! I will get back to you soon.",
-        id: message.id 
+        message: "Message received successfully! Check server console for details."
       });
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        res.status(400).json({ 
-          success: false, 
-          message: "Invalid form data", 
-          errors: error.errors 
-        });
-      } else {
-        res.status(500).json({ 
-          success: false, 
-          message: "Failed to send message. Please try again." 
-        });
-      }
+      console.error('Email processing error:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to process message" 
+      });
     }
   });
 

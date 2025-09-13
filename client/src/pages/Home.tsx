@@ -8,10 +8,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useMutation } from '@tanstack/react-query';
 import { useToast } from '@/hooks/use-toast';
 import { insertContactMessageSchema, type InsertContactMessage } from '@shared/schema';
-import { apiRequest } from '@/lib/queryClient';
+import { sendEmail } from '@/lib/emailService';
 
 import { Navigation } from '@/components/Navigation';
 import { TypingAnimation } from '@/components/TypingAnimation';
@@ -53,6 +52,8 @@ const experiences = [
 export default function Home() {
   const { toast } = useToast();
   
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
     defaultValues: {
@@ -64,29 +65,39 @@ export default function Home() {
     }
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: InsertContactMessage) => {
-      const response = await apiRequest('POST', '/api/contact', data);
-      return response.json();
-    },
-    onSuccess: (data) => {
-      toast({
-        title: "Message sent successfully!",
-        description: data.message,
+  const onSubmit = async (data: InsertContactMessage) => {
+    setIsSubmitting(true);
+    
+    try {
+      const emailSent = await sendEmail({
+        name: `${data.firstName} ${data.lastName}`.trim(),
+        email: data.email,
+        subject: data.subject,
+        message: data.message
       });
-      form.reset();
-    },
-    onError: () => {
+
+      if (emailSent) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for your message! I will get back to you soon.",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
-  });
-
-  const onSubmit = (data: InsertContactMessage) => {
-    contactMutation.mutate(data);
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -634,10 +645,10 @@ export default function Home() {
                     >
                       <Button
                         type="submit"
-                        disabled={contactMutation.isPending}
+                        disabled={isSubmitting}
                         className="w-full text-white btn-holographic border-0 py-3 text-lg font-semibold"
                       >
-                        {contactMutation.isPending ? (
+                        {isSubmitting ? (
                           'Sending...'
                         ) : (
                           <>
