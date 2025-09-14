@@ -22,7 +22,7 @@ const skills = [
   { name: 'React.js', percentage: 95 },
   { name: 'Node.js', percentage: 90 },
   { name: 'JavaScript', percentage: 88 },
-  { name: 'Python', percentage: 85 },
+  { name: 'Python', percentage: 60 },
   { name: 'AWS/Cloud', percentage: 82 },
   { name: 'MongoDB', percentage: 80 }
 ];
@@ -38,7 +38,7 @@ const experiences = [
     company: 'HCLTech, Benguluru',
     period: '2023 - present',
     description: 'Created responsive websites and web applications for various clients. Focused on user experience, performance optimization, and modern JavaScript frameworks.',
-    technologies: ['JavaScript', 'React', 'SASS', 'Webpack']
+    technologies: ['JavaScript', 'React', 'MobX', 'Micro Frontend']
   },
   {
     title: 'Junior Web Developer',

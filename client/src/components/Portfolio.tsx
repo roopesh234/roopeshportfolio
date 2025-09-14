@@ -23,8 +23,8 @@ const projects: Project[] = [
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
     category: 'web',
     technologies: ['React', 'Node.js', 'MongoDB'],
-    liveUrl: '#',
-    githubUrl: '#'
+    // liveUrl: '#',
+    githubUrl: 'https://github.com/roopesh234'
   },
   {
     id: 2,
@@ -33,8 +33,8 @@ const projects: Project[] = [
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
     category: 'mobile',
     technologies: ['React Native', 'Firebase', 'Redux'],
-    liveUrl: '#',
-    githubUrl: '#'
+    // liveUrl: '#',
+    githubUrl: 'https://github.com/roopesh234'
   },
   {
     id: 3,
@@ -43,38 +43,8 @@ const projects: Project[] = [
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
     category: 'api',
     technologies: ['Express.js', 'PostgreSQL', 'Docker'],
-    liveUrl: '#',
-    githubUrl: '#'
-  },
-  {
-    id: 4,
-    title: 'Social Media Analytics',
-    description: 'An advanced analytics platform for social media managers with sentiment analysis, engagement metrics, and automated reporting.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
-    category: 'web',
-    technologies: ['Vue.js', 'Python', 'Redis'],
-    liveUrl: '#',
-    githubUrl: '#'
-  },
-  {
-    id: 5,
-    title: 'Real Estate Platform',
-    description: 'A comprehensive real estate platform with advanced search filters, virtual tours, mortgage calculators, and agent management.',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
-    category: 'web',
-    technologies: ['Next.js', 'GraphQL', 'AWS'],
-    liveUrl: '#',
-    githubUrl: '#'
-  },
-  {
-    id: 6,
-    title: 'Microservices Architecture',
-    description: 'A distributed microservices system with event-driven architecture, API gateway, service discovery, and monitoring for enterprise applications.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
-    category: 'api',
-    technologies: ['Node.js', 'Kubernetes', 'Redis'],
-    liveUrl: '#',
-    githubUrl: '#'
+    // liveUrl: '#',
+    githubUrl: 'https://github.com/roopesh234'
   }
 ];
 
