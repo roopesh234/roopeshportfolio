@@ -1,17 +1,13 @@
-import type { Express } from "express";
-import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { insertContactMessageSchema } from "@shared/schema";
-import { z } from "zod";
+import type { Express } from 'express';
+import { createServer, type Server } from 'http';
+import { storage } from './storage';
 
 export async function registerRoutes(app: Express): Promise<Server> {
-
-
   // Simple contact email endpoint
-  app.post("/api/send-contact-email", async (req, res) => {
+  app.post('/api/send-contact-email', async (req, res) => {
     try {
       const { name, email, subject, message } = req.body;
-      
+
       // Create email content
       const emailContent = {
         to: 'sroopesh242@gmail.com',
@@ -19,7 +15,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         fromName: name,
         subject: `Contact Form: ${subject}`,
         message: message,
-        timestamp: new Date().toLocaleString()
+        timestamp: new Date().toLocaleString(),
       };
 
       // Log the email details
@@ -45,16 +41,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
             email: email,
             subject: `Contact Form: ${subject}`,
             message: `From: ${name} (${email})\n\nSubject: ${subject}\n\nMessage:\n${message}`,
-            to: 'sroopesh242@gmail.com'
-          })
+            to: 'sroopesh242@gmail.com',
+          }),
         });
 
         if (webhookResponse.ok) {
           const result = await webhookResponse.json();
           console.log('📧 Email sent successfully via Web3Forms:', result);
-          res.json({ 
-            success: true, 
-            message: "Message sent successfully to sroopesh242@gmail.com! Check your inbox."
+          res.json({
+            success: true,
+            message: 'Message sent successfully to sroopesh242@gmail.com! Check your inbox.',
           });
           return;
         } else {
@@ -65,28 +61,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       // Success response
-      res.json({ 
-        success: true, 
-        message: "Message received successfully! Check server console for details."
+      res.json({
+        success: true,
+        message: 'Message received successfully! Check server console for details.',
       });
     } catch (error) {
       console.error('Email processing error:', error);
-      res.status(500).json({ 
-        success: false, 
-        message: "Failed to process message" 
+      res.status(500).json({
+        success: false,
+        message: 'Failed to process message',
       });
     }
   });
 
   // Get all contact messages (for admin purposes)
-  app.get("/api/contact-messages", async (req, res) => {
+  app.get('/api/contact-messages', async (req, res) => {
     try {
       const messages = await storage.getContactMessages();
       res.json(messages);
-    } catch (error) {
-      res.status(500).json({ 
-        success: false, 
-        message: "Failed to retrieve messages" 
+    } catch {
+      res.status(500).json({
+        success: false,
+        message: 'Failed to retrieve messages',
       });
     }
   });
