@@ -15,6 +15,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Express
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **React 18** with TypeScript
 - **Vite** for fast development and building
 - **Tailwind CSS** for styling
@@ -24,6 +25,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Express
 - **Lucide React** icons
 
 ### Backend
+
 - **Express.js** with TypeScript
 - **Web3Forms** for email delivery
 - **Drizzle ORM** for database operations
@@ -34,12 +36,14 @@ A modern, responsive portfolio website built with React, TypeScript, and Express
 The contact form is fully functional and sends emails directly to your Gmail inbox using Web3Forms service.
 
 ### How it works:
+
 1. User fills out the contact form
 2. Form data is sent to the server
 3. Server forwards the email via Web3Forms
 4. You receive the email in your Gmail inbox (`sroopesh242@gmail.com`)
 
 ### Email Format:
+
 ```
 Subject: Contact Form: [User's Subject]
 
@@ -54,23 +58,27 @@ Message:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd DevPortfolioHub-1
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -99,17 +107,22 @@ DevPortfolioHub-1/
 ## 🎨 Customization
 
 ### Personal Information
+
 Update your personal information in:
+
 - `client/src/pages/Home.tsx` - Main content, skills, experience
 - `client/src/components/Portfolio.tsx` - Portfolio projects
 
 ### Styling
+
 - Modify `client/src/index.css` for global styles
 - Update Tailwind classes in components for custom styling
 - Theme colors can be customized in `tailwind.config.ts`
 
 ### Contact Form
+
 The contact form is configured to send emails to `sroopesh242@gmail.com`. To change this:
+
 1. Update the email address in `server/routes.ts`
 2. Update the Web3Forms configuration if needed
 
@@ -125,17 +138,21 @@ The contact form uses Web3Forms service for reliable email delivery:
 ## 🚀 Deployment
 
 ### Build for Production
+
 ```bash
 npm run build
 ```
 
 ### Start Production Server
+
 ```bash
 npm start
 ```
 
 ### Environment Variables
+
 Create a `.env` file in the root directory:
+
 ```env
 PORT=5000
 NODE_ENV=production
@@ -144,6 +161,7 @@ NODE_ENV=production
 ## 📱 Responsive Design
 
 The website is fully responsive and optimized for:
+
 - Desktop (1200px+)
 - Tablet (768px - 1199px)
 - Mobile (320px - 767px)
@@ -158,12 +176,14 @@ The website is fully responsive and optimized for:
 ## 🔧 Development
 
 ### Available Scripts
+
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm start` - Start production server
 - `npm run check` - Type checking
 
 ### Code Quality
+
 - TypeScript for type safety
 - ESLint for code linting
 - Prettier for code formatting
@@ -183,6 +203,7 @@ This project is licensed under the MIT License.
 ## 📞 Support
 
 For support or questions, please contact:
+
 - Email: sroopesh242@gmail.com
 - GitHub: [Your GitHub Profile]
 

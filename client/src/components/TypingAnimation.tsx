@@ -14,8 +14,8 @@ export function TypingAnimation({ text, className = '', speed = 100 }: TypingAni
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+        setDisplayText((prev) => prev + text[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
       }, speed);
 
       return () => clearTimeout(timeout);
@@ -23,7 +23,7 @@ export function TypingAnimation({ text, className = '', speed = 100 }: TypingAni
   }, [currentIndex, text, speed]);
 
   return (
-    <motion.span 
+    <motion.span
       className={`typing-cursor ${className}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

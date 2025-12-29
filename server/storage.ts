@@ -1,4 +1,9 @@
-import { users, type User, type InsertUser, type ContactMessage, type InsertContactMessage } from "@shared/schema";
+import {
+  type User,
+  type InsertUser,
+  type ContactMessage,
+  type InsertContactMessage,
+} from '@shared/schema';
 
 // modify the interface with any CRUD methods
 // you might need
@@ -29,9 +34,7 @@ export class MemStorage implements IStorage {
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    return Array.from(this.users.values()).find((user) => user.username === username);
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
@@ -43,10 +46,10 @@ export class MemStorage implements IStorage {
 
   async createContactMessage(insertMessage: InsertContactMessage): Promise<ContactMessage> {
     const id = this.currentMessageId++;
-    const message: ContactMessage = { 
-      ...insertMessage, 
-      id, 
-      createdAt: new Date()
+    const message: ContactMessage = {
+      ...insertMessage,
+      id,
+      createdAt: new Date(),
     };
     this.contactMessages.set(id, message);
     return message;

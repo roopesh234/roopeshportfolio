@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
 import { Button } from '@/components/ui/button';
 
@@ -36,15 +36,15 @@ export function Navigation() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isScrolled ? 'glass-effect' : 'glass-effect'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <motion.div
             className="flex-shrink-0"
@@ -53,7 +53,7 @@ export function Navigation() {
           >
             <button
               onClick={() => scrollToSection('#home')}
-              className="text-2xl font-bold portfolio-primary hover:opacity-80 transition-opacity font-display"
+              className="portfolio-primary font-display text-2xl font-bold transition-opacity hover:opacity-80"
             >
               Roopesh
             </button>
@@ -66,7 +66,7 @@ export function Navigation() {
                 <motion.button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-200 font-inter"
+                  className="font-inter text-gray-700 transition-colors duration-200 hover:text-primary dark:text-gray-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -82,9 +82,9 @@ export function Navigation() {
               variant="outline"
               size="icon"
               onClick={toggleTheme}
-              className="portfolio-bg-primary border-primary text-primary-foreground hover:bg-primary/90"
+              className="portfolio-bg-primary hover:bg-primary/90 border-primary text-lg text-primary-foreground"
             >
-              {theme === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+              {theme === 'light' ? '🌙' : '☀️'}
             </Button>
 
             {/* Mobile menu button */}
@@ -105,18 +105,18 @@ export function Navigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden bg-[hsl(47,25%,95%)] dark:bg-gray-900 shadow-lg"
+            className="bg-[hsl(47,25%,95%)] shadow-lg dark:bg-gray-900 md:hidden"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="space-y-1 px-2 pb-3 pt-2">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors font-inter"
+                  className="font-inter block w-full px-3 py-2 text-left text-gray-700 transition-colors hover:text-primary dark:text-gray-300"
                 >
                   {item.label}
                 </button>

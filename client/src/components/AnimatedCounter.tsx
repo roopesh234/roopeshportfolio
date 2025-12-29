@@ -8,7 +8,12 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
-export function AnimatedCounter({ target, duration = 2, suffix = '', className = '' }: AnimatedCounterProps) {
+export function AnimatedCounter({
+  target,
+  duration = 2,
+  suffix = '',
+  className = '',
+}: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -17,7 +22,7 @@ export function AnimatedCounter({ target, duration = 2, suffix = '', className =
     if (isInView) {
       let start = 0;
       const increment = target / (duration * 60); // 60fps
-      
+
       const timer = setInterval(() => {
         start += increment;
         if (start >= target) {
@@ -35,12 +40,13 @@ export function AnimatedCounter({ target, duration = 2, suffix = '', className =
   return (
     <motion.div
       ref={ref}
-      className={`text-3xl font-bold portfolio-primary ${className}`}
+      className={`portfolio-primary text-3xl font-bold ${className}`}
       initial={{ scale: 0.5, opacity: 0 }}
       animate={isInView ? { scale: 1, opacity: 1 } : {}}
       transition={{ duration: 0.5, delay: 0.2 }}
     >
-      {count}{suffix}
+      {count}
+      {suffix}
     </motion.div>
   );
 }
